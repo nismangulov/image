@@ -49,6 +49,11 @@ class Xmp
     const PHOTO_MECHANIC_NS = "http://ns.camerabits.com/photomechanic/1.0/";
 
     /**
+     *
+     */
+    const XMP_PHOTOSPHERE_NS = "http://ns.google.com/photos/1.0/panorama/1";
+
+    /**
      * @var \DomDocument
      */
     private $dom;
@@ -81,7 +86,8 @@ class Xmp
         'xmpRights' => self::XMP_RIGHTS_NS,
         'Iptc4xmpCore' => self::IPTC4_XMP_CORE_NS,
         'Iptc4xmpExt' => self::IPTC4_XMP_EXT_NS,
-        'photomechanic' => self::PHOTO_MECHANIC_NS
+        'photomechanic' => self::PHOTO_MECHANIC_NS,
+        'GPano' => self::XMP_PHOTOSPHERE_NS
     ];
 
     /**
@@ -1395,6 +1401,348 @@ class Xmp
     public function setFeaturedOrganisationCode($featuredOrganisationCode)
     {
         return $this->setBag('Iptc4xmpExt:OrganisationInImageCode', $featuredOrganisationCode, self::IPTC4_XMP_EXT_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getUsePanoramaViewer()
+    {
+        return $this->getAttr('GPano:UsePanoramaViewer', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $usePanoramaViewer
+     *
+     * @return $this
+     */
+    public function setUsePanoramaViewer($usePanoramaViewer)
+    {
+        return $this->setAttr('GPano:UsePanoramaViewer', $usePanoramaViewer, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getCaptureSoftware()
+    {
+        return $this->getAttr('GPano:CaptureSoftware', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $сaptureSoftware
+     *
+     * @return $this
+     */
+    public function setCaptureSoftware($сaptureSoftware)
+    {
+        return $this->setAttr('GPano:CaptureSoftware', $сaptureSoftware, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getStitchingSoftware()
+    {
+        return $this->getAttr('GPano:StitchingSoftware', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $stitchingSoftware
+     *
+     * @return $this
+     */
+    public function setStitchingSoftware($stitchingSoftware)
+    {
+        return $this->setAttr('GPano:StitchingSoftware', $stitchingSoftware, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getProjectionType()
+    {
+        return $this->getAttr('GPano:ProjectionType', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array
+     *
+     * @return $this
+     */
+    public function setProjectionType($projectionType)
+    {
+        return $this->setAttr('GPano:ProjectionType', $projectionType, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getPoseHeadingDegrees()
+    {
+        return $this->getAttr('GPano:PoseHeadingDegrees', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $poseHeadingDegrees
+     *
+     * @return $this
+     */
+    public function setPoseHeadingDegrees($poseHeadingDegrees)
+    {
+        return $this->setAttr('GPano:PoseHeadingDegrees', $poseHeadingDegrees, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getInitialViewHeadingDegrees()
+    {
+        return $this->getAttr('GPano:InitialViewHeadingDegrees', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $initialViewHeadingDegrees
+     *
+     * @return $this
+     */
+    public function setInitialViewHeadingDegrees($initialViewHeadingDegrees)
+    {
+        return $this->setAttr('GPano:InitialViewHeadingDegrees', $initialViewHeadingDegrees, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getInitialViewPitchDegrees()
+    {
+        return $this->getAttr('GPano:InitialViewPitchDegrees', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $initialViewPitchDegrees
+     *
+     * @return $this
+     */
+    public function setInitialViewPitchDegrees($initialViewPitchDegrees)
+    {
+        return $this->setAttr('GPano:InitialViewPitchDegrees', $initialViewPitchDegrees, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getInitialViewRollDegrees()
+    {
+        return $this->getAttr('GPano:InitialViewRollDegrees', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $initialViewRollDegrees
+     *
+     * @return $this
+     */
+    public function setInitialViewRollDegrees($initialViewRollDegrees)
+    {
+        return $this->setAttr('GPano:InitialViewRollDegrees', $initialViewRollDegrees, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getInitialHorizontalFOVDegrees()
+    {
+        return $this->getAttr('GPano:InitialHorizontalFOVDegrees', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $initialHorizontalFOVDegrees
+     *
+     * @return $this
+     */
+    public function setInitialHorizontalFOVDegrees($initialHorizontalFOVDegrees)
+    {
+        return $this->setAttr('GPano:InitialHorizontalFOVDegrees', $initialHorizontalFOVDegrees, self::XMP_PHOTOSPHERE_NS);
+    }
+
+
+    /**
+     * @return array
+     */
+    public function getCroppedAreaLeftPixels()
+    {
+        return $this->getAttr('GPano:CroppedAreaLeftPixels', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $croppedAreaLeftPixels
+     *
+     * @return $this
+     */
+    public function setCroppedAreaLeftPixels($croppedAreaLeftPixels)
+    {
+        return $this->setAttr('GPano:CroppedAreaLeftPixels', $croppedAreaLeftPixels, self::XMP_PHOTOSPHERE_NS);
+    }
+    /**
+     * @return array
+     */
+    public function getCroppedAreaTopPixels()
+    {
+        return $this->getAttr('GPano:CroppedAreaTopPixels', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $croppedAreaTopPixels
+     *
+     * @return $this
+     */
+    public function setCroppedAreaTopPixels($croppedAreaTopPixels)
+    {
+        return $this->setAttr('GPano:CroppedAreaTopPixels', $croppedAreaTopPixels, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getCroppedAreaImageWidth()
+    {
+        return $this->getAttr('GPano:CroppedAreaImageWidthPixels', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $croppedAreaImageWidth
+     *
+     * @return $this
+     */
+    public function setCroppedAreaImageWidth($croppedAreaImageWidth)
+    {
+        return $this->setAttr('GPano:CroppedAreaImageWidthPixels', $croppedAreaImageWidth, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getCroppedAreaImageHeight()
+    {
+        return $this->getAttr('GPano:CroppedAreaImageHeightPixels', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $croppedAreaImageHeight
+     *
+     * @return $this
+     */
+    public function setCroppedAreaImageHeight($croppedAreaImageHeight)
+    {
+        return $this->setAttr('GPano:CroppedAreaImageHeightPixels', $croppedAreaImageHeight, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getFullPanoWidthPixels()
+    {
+        return $this->getAttr('GPano:FullPanoWidthPixels', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $fullPanoWidthPixels
+     *
+     * @return $this
+     */
+    public function setFullPanoWidthPixels($fullPanoWidthPixels)
+    {
+        return $this->setAttr('GPano:FullPanoWidthPixels', $fullPanoWidthPixels, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getFullPanoHeightPixels()
+    {
+        return $this->getAttr('GPano:FullPanoHeightPixels', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $fullPanoHeightPixels
+     *
+     * @return $this
+     */
+    public function setFullPanoHeightPixels($fullPanoHeightPixels)
+    {
+        return $this->setAttr('GPano:FullPanoHeightPixels', $fullPanoHeightPixels, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getFirstPhotoDate()
+    {
+        return $this->getAttr('GPano:FirstPhotoDate', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $firstPhotoDate
+     *
+     * @return $this
+     */
+    public function setFirstPhotoDate($firstPhotoDate)
+    {
+        return $this->setAttr('GPano:FirstPhotoDate', $firstPhotoDate, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getLastPhotoDate()
+    {
+        return $this->getAttr('GPano:LastPhotoDate', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $lastPhotoDate
+     *
+     * @return $this
+     */
+    public function setLastPhotoDate($lastPhotoDate)
+    {
+        return $this->setAttr('GPano:LastPhotoDate', $lastPhotoDate, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getSourcePhotosCount()
+    {
+        return $this->getAttr('GPano:SourcePhotosCount', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $sourcePhotosCount
+     *
+     * @return $this
+     */
+    public function setSourcePhotosCount($sourcePhotosCount)
+    {
+        return $this->setAttr('GPano:SourcePhotosCount', $sourcePhotosCount, self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @return array
+     */
+    public function getExposureLockUsed()
+    {
+        return $this->getAttr('GPano:ExposureLockUsed', self::XMP_PHOTOSPHERE_NS);
+    }
+
+    /**
+     * @param array $exposureLockUsed
+     *
+     * @return $this
+     */
+    public function setExposureLockUsed($exposureLockUsed)
+    {
+        return $this->setAttr('GPano:ExposureLockUsed', $exposureLockUsed, self::XMP_PHOTOSPHERE_NS);
     }
 
     /**
